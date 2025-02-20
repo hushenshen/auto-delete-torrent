@@ -1,0 +1,14 @@
+services:
+  auto-delete-torrent:
+    container_name: adt
+    image: deeplakehss/auto-delete-torrent:latest
+    environment:
+      QBITTORRENT_HOST: "http://192.168.1.121:3000"  # 配置主机地址
+      QBITTORRENT_USERNAME: "user"  # 配置用户名
+      QBITTORRENT_PASSWORD: "xxxxxxx"  # 配置密码
+    volumes:
+    - ./log:/log
+    - /etc/localtime:/etc/localtime:ro
+    network_mode: host
+    restart: unless-stopped  # 容器退出时重启
+

@@ -1,0 +1,1 @@
+*/15 * * * * /bin/bash -c 'source /etc/profile && /usr/local/bin/python3 /app/main.py' >> /log/$(/bin/date +\%Y-\%m-\%d).log
